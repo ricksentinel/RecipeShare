@@ -6,8 +6,25 @@ package datastructures;
  */
 public class IdAndNamePair implements Pair<Long, String> {
 
-	private long id;
+	private Long id;
 	private String name;
+
+	/**
+	 * Constructs a pair with default values.
+	 */
+	public IdAndNamePair() {
+		this(((long) -1), null);
+	}
+
+	/**
+	 * Constructs a pair with given values.
+	 * @param id Pair's ID.
+	 * @param name Pair's name.
+	 */
+	public IdAndNamePair(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 
 	/**
 	 * @return Pair's ID.
@@ -21,7 +38,7 @@ public class IdAndNamePair implements Pair<Long, String> {
 	 * Sets pair's ID.
 	 * @param id ID to set.
 	 */
-	public void setFirst(long id) {
+	public void setFirst(Long id) {
 		this.id = id;
 	}
 
