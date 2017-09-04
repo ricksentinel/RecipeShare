@@ -40,7 +40,7 @@ public class RecipeIngredient {
 	/**
 	 * @return RecipeIngredient's name.
 	 */
-	String getName() {
+	public String getName() {
 		return this.name;
 	}
 
@@ -48,14 +48,14 @@ public class RecipeIngredient {
 	 * Sets RecipeIngredient's name.
 	 * @param name Name to set.
 	 */
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
 	 * @return RecipeIngredient's amount.
 	 */
-	int getAmount() {
+	public int getAmount() {
 		return this.amount;
 	}
 
@@ -63,14 +63,14 @@ public class RecipeIngredient {
 	 * Sets RecipeIngredient's amount.
 	 * @param amount Amount to set.
 	 */
-	void setAmount(int amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
 	/**
 	 * @return RecipeIngredient's unit of measure.
 	 */
-	MeasureUnit getMeasure() {
+	public MeasureUnit getMeasure() {
 		return this.unit;
 	}
 
@@ -78,7 +78,7 @@ public class RecipeIngredient {
 	 * Sets RecipeIngredient's unit of measure.
 	 * @param unit Ingredient amount's unit of measure.
 	 */
-	void setMeasure(MeasureUnit unit) {
+	public void setMeasure(MeasureUnit unit) {
 		this.unit = unit;
 	}
 
