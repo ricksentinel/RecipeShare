@@ -16,7 +16,7 @@ public interface CookingRecipeRepository extends CrudRepository<CookingRecipe, L
 	 * @param id ID of recipe to find.
 	 * @return CookingRecipe object if found, null otherwise.
 	 */
-	CookingRecipe findById(long id);
+	CookingRecipe findById(Long id);
 
 	/**
 	 * Finds list of recipes by name.
