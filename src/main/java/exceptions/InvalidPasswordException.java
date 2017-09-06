@@ -13,7 +13,7 @@ public class InvalidPasswordException extends Exception {
 	 * Constructs InvalidPasswordException with error message.
 	 */
 	public InvalidPasswordException() {
-		super("Invalid password! Requires at least 6 characters (a-z, 0-9, '_').");
+		super("Invalid password! Requires at least 6 characters.");
 	}
 
 }
