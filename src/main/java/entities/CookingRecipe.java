@@ -1,5 +1,6 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.Entity;
@@ -23,8 +24,8 @@ public class CookingRecipe {
 	private long id;
 
 	private String name;
-	private List<RecipeIngredient> allIngredients;
-	private List<String> allInstructions;
+	private ArrayList<RecipeIngredient> allIngredients;
+	private ArrayList<String> allInstructions;
 	private int numOfPortions;
 	private long numOfBooks;
 
@@ -106,18 +107,17 @@ public class CookingRecipe {
 	}
 
 	/**
-	 * Add an ingredient to CookingRecipe.
+	 * Adds ingredient to CookingRecipe.
 	 * @param ingredient RecipeIngredient to add.
 	 * @see MeasureUnit enum.
 	 */
 	private void addIngredient(RecipeIngredient ingredient) {
 		boolean hasFound = false;
 
-		// Search for ingredient's name and amount in the list.
+		// Search for ingredient's in the list.
 		for (RecipeIngredient ingredientInList : getIngredients()) {
 			// If found, add given amount to it.
-			if (ingredientInList.getName().equals(ingredient.getName())
-					&& (ingredientInList.getAmount() == ingredient.getAmount())) {
+			if (ingredientInList.getName().equals(ingredient.getName())) {
 				ingredientInList.setAmount(ingredientInList.getAmount() + ingredient.getAmount());
 				hasFound = true;
 			}
@@ -130,7 +130,7 @@ public class CookingRecipe {
 	}
 
 	/**
-	 * Add a instruction line to CookingRecipe.
+	 * Adds instruction line to CookingRecipe.
 	 * @param instructionLine Line of instruction to cook recipe.
 	 */
 	public void addInstruction(String instructionLine) {
