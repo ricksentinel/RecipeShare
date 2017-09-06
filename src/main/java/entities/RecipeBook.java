@@ -1,18 +1,20 @@
 package entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.beans.factory.annotation.Autowired;
 import datastructures.IdAndNamePair;
 import repositories.CookingRecipeRepository;
 
 
 /**
- * A book of cooking recipes. All recipes added to repository are shared between
- * different RecipeBook objects.
+ * A book of cooking recipes. All recipes added to the repository are shared
+ * between different RecipeBook objects.
  * @author Renan Jesus
  */
 @Entity
@@ -25,14 +27,16 @@ public class RecipeBook {
 
 	private static CookingRecipeRepository allRecipes;
 
-	private List<IdAndNamePair> bookRecipes;
+	private ArrayList<IdAndNamePair> bookRecipes;
 	private String name;
 	private String author;
 
 	/**
 	 * Constructs an empty RecipeBook with default values.
 	 */
-	public RecipeBook() {
+	@Autowired
+	public RecipeBook(CookingRecipeRepository repository) {
+		RecipeBook.allRecipes = repository;
 		this.name = "My Recipe Book";
 		this.author = null;
 	}
@@ -154,7 +158,7 @@ public class RecipeBook {
 	/**
 	 * Finds all CookingRecipe objects named 'recipeName' in this book.
 	 * @param recipeName Name of recipe to find.
-	 * @return CookingRecipe if found, null otherwise.
+	 * @return List of CookingRecipe objects if found, null otherwise.
 	 */
 	public List<CookingRecipe> findByName(String recipeName) {
 		// Find recipe by name.
