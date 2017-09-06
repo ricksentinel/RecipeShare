@@ -26,15 +26,22 @@ public class RecipeIngredient {
 	}
 
 	/**
-	 * Constructs RecipeIngredient with given values.
+	 * Constructs RecipeIngredient with given values. Requires [amount > 0].
 	 * @param name Ingredient's name.
 	 * @param amount Ingredient's amount in recipe.
 	 * @param measure Amount's unit of measure.
 	 */
 	public RecipeIngredient(String name, int amount, MeasureUnit unit) {
 		this.name = name;
-		this.amount = amount;
 		this.unit = unit;
+
+		// Saturate amount in one.
+		if (amount > 0) {
+			this.amount = amount;
+		}
+		else {
+			this.amount = 1;
+		}
 	}
 
 	/**
@@ -60,11 +67,16 @@ public class RecipeIngredient {
 	}
 
 	/**
-	 * Sets RecipeIngredient's amount.
+	 * Sets RecipeIngredient's amount. Saturates lowest values in one.
 	 * @param amount Amount to set.
 	 */
 	public void setAmount(int amount) {
-		this.amount = amount;
+		if (amount > 0) {
+			this.amount = amount;
+		}
+		else {
+			this.amount = 1;
+		}
 	}
 
 	/**
