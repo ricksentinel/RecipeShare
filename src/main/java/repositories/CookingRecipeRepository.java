@@ -2,6 +2,7 @@ package repositories;
 
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import entities.CookingRecipe;
 
 
@@ -9,6 +10,7 @@ import entities.CookingRecipe;
  * A repository for CookingRecipe objects.
  * @author Renan Jesus
  */
+@Repository
 public interface CookingRecipeRepository extends CrudRepository<CookingRecipe, Long> {
 
 	/**
