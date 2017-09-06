@@ -4,6 +4,7 @@ package datastructures;
  * A pair of an object's ID and name.
  * @author Renan Jesus
  */
+
 public class IdAndNamePair implements Pair<Long, String> {
 
 	private Long id;
